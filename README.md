@@ -1,3 +1,4 @@
 # TFG
 
-Version de python 3.13
+Version de python 3.12
+
