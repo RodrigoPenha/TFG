@@ -1,4 +1,4 @@
-name: my_env_TFG
+name: C:\Users\rodri\OneDrive\Documentos\TFG\env
 channels:
   - defaults
 dependencies:
@@ -31,4 +31,4 @@ dependencies:
   - wheel=0.44.0
   - xz=5.4.6
   - zlib=1.2.13
-prefix: C:\Users\rodri\anaconda3\envs\my_env_TFG
+prefix: C:\Users\rodri\OneDrive\Documentos\TFG\env
