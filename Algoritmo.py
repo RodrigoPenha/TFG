@@ -1,78 +1,68 @@
 # -*- coding: utf-8 -*-
 """
-Algoritmo genetico de generacion de grafos contrafactuales
+Created on Thu Oct 24 13:17:50 2024
+
+@author: rodri
 """
 
+import FuncionesAlgoritmo
 import networkx as nx
-import random
+
 import matplotlib.pyplot as plt
 
-labels = ['A','B','C']
+G = nx.Graph()
 
-graphs = list()
+G.add_nodes_from(['v1','v2','v3','v4'])
 
-g1 = nx.Graph()
+G1 = G.copy()
 
-g1.add_node('A1', element='A')
-g1.add_node('A2', element='A')
-g1.add_node('B1', element='B')
-g1.add_node('C1', element='C')
-g1.add_node('C2', element='C')
+G.add_edges_from([('v1','v2'),('v2','v3'),('v2','v4'),('v3','v4')])
 
-g1.add_edges_from([('A1', 'A2'),('A2', 'C2'),('C2', 'A1'),('B1', 'A2'),('C1', 'A1')])
+G1.add_edges_from([('v1','v2'),('v2','v3'),('v2','v4'),('v3','v4'), ('v1', 'v4')])
 
+pos = nx.spring_layout(G)  # Posiciona los nodos
+nx.draw(G, pos, with_labels=False, node_color='lightblue', node_size=700, font_size=16, font_color='black', font_weight='bold', edge_color='gray')
 
-def modify_graph(G):
-    # Elegir una acción aleatoria
-    action = random.choice(['remove_node', 'add_node_edge', 'add_edge'])
-    
-    if action == 'remove_node':
-        # Eliminar un nodo aleatorio, si hay nodos disponibles
-        if len(G.nodes) > 0:
-            node_to_remove = random.choice(list(G.nodes))
-            G.remove_node(node_to_remove)
-            print(f"Removed node: {node_to_remove}")
-    
-    elif action == 'add_node_edge':
-        # Crear un nuevo nodo y un enlace a un nodo existente
-        new_label = random.choice(labels)
-        new_node = f'{new_label}{len(G.nodes)}'  # Generar un nombre único
-        if len(G.nodes) > 0:
-            existing_node = random.choice(list(G.nodes))
-            G.add_node(new_node, element=new_label)
-            G.add_edge(new_node, existing_node)
-            print(f"Added node: {new_node} and connected it to {existing_node}")
-    
-    elif action == 'add_edge':
-        # Añadir un nuevo enlace entre dos nodos existentes
-        if len(G.nodes) >= 2:
-            nodes = random.sample(list(G.nodes), 2)
-            G.add_edge(nodes[0], nodes[1])
-            print(f"Added edge between: {nodes[0]} and {nodes[1]}")
-            
-# Visualizar el grafo           
-pos = nx.spring_layout(g1)  # Posiciona los nodos
-nx.draw(g1, pos, with_labels=False, node_color='lightblue', node_size=700, font_size=16, font_color='black', font_weight='bold', edge_color='gray')
-
-# Etiquetas para los nodos usando solo el elemento
-labels = {node: data['element'] for node, data in g1.nodes(data=True)}
-nx.draw_networkx_labels(g1, pos, labels=labels)
+nx.draw_networkx_labels(G, pos)
 
 # Mostrar el grafo
-plt.title("Grafo Representado")
+plt.title("G Representado")
 plt.show()
-            
 
-modify_graph(g1)
+pos = nx.spring_layout(G1)  # Posiciona los nodos
+nx.draw(G1, pos, with_labels=False, node_color='lightblue', node_size=700, font_size=16, font_color='black', font_weight='bold', edge_color='gray')
 
-# Visualizar el grafo
-pos = nx.spring_layout(g1)  # Posiciona los nodos
-nx.draw(g1, pos, with_labels=False, node_color='lightblue', node_size=700, font_size=16, font_color='black', font_weight='bold', edge_color='gray')
-
-# Etiquetas para los nodos usando solo el elemento
-labels = {node: data['element'] for node, data in g1.nodes(data=True)}
-nx.draw_networkx_labels(g1, pos, labels=labels)
+nx.draw_networkx_labels(G1, pos)
 
 # Mostrar el grafo
-plt.title("Grafo Modificado")
+plt.title("G1 Representado")
+plt.show()
+
+repr_G = FuncionesAlgoritmo.graphToRepr(G)
+repr_G1 = FuncionesAlgoritmo.graphToRepr(G1)
+
+
+hijo1, hijo2 = FuncionesAlgoritmo.cruce_dos_puntos(repr_G, repr_G1)
+
+G_hijo1 = FuncionesAlgoritmo.reprToGraph(hijo1)
+
+
+pos = nx.spring_layout(G_hijo1)  # Posiciona los nodos
+nx.draw(G_hijo1, pos, with_labels=False, node_color='lightblue', node_size=700, font_size=16, font_color='black', font_weight='bold', edge_color='gray')
+
+nx.draw_networkx_labels(G_hijo1, pos)
+
+# Mostrar el grafo
+plt.title("G Hijo1")
+plt.show()
+
+G_hijo2 = FuncionesAlgoritmo.reprToGraph(hijo2)
+
+pos = nx.spring_layout(G_hijo2)  # Posiciona los nodos
+nx.draw(G_hijo2, pos, with_labels=False, node_color='lightblue', node_size=700, font_size=16, font_color='black', font_weight='bold', edge_color='gray')
+
+nx.draw_networkx_labels(G_hijo2, pos)
+
+# Mostrar el grafo
+plt.title("G Hijo2")
 plt.show()
