@@ -42,7 +42,7 @@ repr_G = FuncionesAlgoritmo.graphToRepr(G)
 repr_G1 = FuncionesAlgoritmo.graphToRepr(G1)
 
 
-hijo1, hijo2 = FuncionesAlgoritmo.cruce_dos_puntos(repr_G, repr_G1)
+hijo1, hijo2 = FuncionesAlgoritmo.cruce(repr_G, repr_G1, FuncionesAlgoritmo.cruce_dos_puntos)
 
 G_hijo1 = FuncionesAlgoritmo.reprToGraph(hijo1)
 

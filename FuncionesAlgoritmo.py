@@ -77,6 +77,17 @@ def cruce_dos_puntos(padre1, padre2):
     
     return hijo1, hijo2
 
+def cruce(padre1, padre2, opcion):
+    if opcion not in [cruce_dos_puntos, cruce_un_punto]:
+        raise ValueError(" La funcion de cruce no esta implementada")    
+    return opcion(padre1,padre2)
+
+
+def clasificador (G):
+    #TODO
+    
+    return 0
+
 
 # G = nx.Graph()
 
