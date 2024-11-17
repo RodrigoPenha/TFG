@@ -5,11 +5,14 @@ Created on Thu Oct 24 12:25:18 2024
 @author: rodri
 """
 
+import itertools
 import networkx as nx
 # import matplotlib.pyplot as plt
 import numpy as np
 # import random
 import math
+import random
+import Importargrafos
 
 def graphToRepr (G):
     A = nx.adjacency_matrix(G).toarray()
@@ -43,11 +46,10 @@ def reprToGraph (R):
             x = y + 1
     G = nx.from_numpy_array(matriz)
     
-    if not nx.is_connected(G):
-        raise Warning('El grafo resultante no es conexo')
-    
     return G
 
+def clasificar (G, clf):
+    return Importargrafos.oracle(nx.adjacency_matrix(G).toarray(), clf)
 
 
 
@@ -82,11 +84,52 @@ def cruce(padre1, padre2, opcion):
         raise ValueError(" La funcion de cruce no esta implementada")    
     return opcion(padre1,padre2)
 
+# funcion que combierte un grafo desconexo en conexo
+def conexo(G, permutaciones_aristas_grafos_original):
+    if not nx.is_connected(G):
+        # Encuentra las componentes conexas
+        componentes = list(nx.connected_components(G))
+        
+        # Conectar cada componente con la siguiente
+        for i in range(len(componentes) - 1):
+            componente_actual = list(componentes[i])
+            siguiente_componente = list(componentes[i + 1])
+            posibles_aristas = [x for x in itertools.product(componente_actual, siguiente_componente)]
+            for lista_permutaciones in permutaciones_aristas_grafos_original:
+                for permu in lista_permutaciones: # Interseccion de las aristas de las permutaciones de grafos originales de un mismo tamaño sin importar el orden
+                        for arista in permu: # Selecciona una arista de la interseccion y comprueba si coincide con alguna de las posibles aristas
+                            if arista in posibles_aristas:
+                                G.add_edge(*arista)
+                                break
+                        else:
+                            break
+                else:
+                    break
+                # Selecciona un nodo aleatorio de cada componente y conecta ambos
+            else:
+                continue # Se ha podido conectar las componentes con aristas de los grafos originales y se pasa a la siguiente iteracion
+            print("No se ha podido conectar las componentes con aristas de los grafos originales")
+            nodo1 = random.choice(componente_actual)
+            nodo2 = random.choice(siguiente_componente)
+            G.add_edge(nodo1, nodo2)
 
-def clasificador (G):
+def OFS (G,clf):
     #TODO
     
-    return 0
+    return G
+
+def fitness (G, Originales: list):
+    '''
+    Distancia de edicion entre el grafo G y los grafos originales
+    '''
+    print("Calculando fitness")
+    mean_distance = 0
+    for grafo in Originales:
+        mean_distance += len(set(grafo.edges).difference(set(G.edges)))
+    result = mean_distance/len(Originales)
+    print(f"Fitness: {result}")
+    return result
+
 
 
 # G = nx.Graph()
