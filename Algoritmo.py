@@ -110,8 +110,8 @@ grafos_originales = [nx.from_numpy_array(grafo) for grafo in grafos_originales]
 parejas = list(itertools.combinations(poblacionActual, 2))
 
 # Parámetros del algoritmo genético
-max_individuos = 20  # Número máximo de individuos en la población
-num_iteraciones = 5  # Número de iteraciones de cruce
+max_individuos = 40  # Número máximo de individuos en la población
+num_iteraciones = 15  # Número de iteraciones de cruce
 
 # para cada permutacion de los grafos originales calculamos la interseccion de las aristas y las guardamos en la lista 
 # Lista para guardar las combinaciones agrupadas por tamaño (excluyendo tamaño 1)
@@ -157,18 +157,21 @@ for iteracion in range(num_iteraciones):
     for padre, madre in parejas:
         padre = FuncionesAlgoritmo.graphToRepr(padre)
         madre = FuncionesAlgoritmo.graphToRepr(madre)
-        hijo1, hijo2 = FuncionesAlgoritmo.cruce_un_punto(padre, madre)
+        hijo1, hijo2 = FuncionesAlgoritmo.cruce_dos_puntos(padre, madre)
         # Comprobamos que los hijos sean conexos
         hijo1 = FuncionesAlgoritmo.reprToGraph(hijo1)
         hijo2 = FuncionesAlgoritmo.reprToGraph(hijo2)
         if not nx.is_connected(hijo1):
-            print("Hijo 1 no es conexo, se descarta")
-            FuncionesAlgoritmo.conexo(hijo1, permutaciones_aristas_grafos_original)
+            
+            if FuncionesAlgoritmo.conexo(hijo1, permutaciones_aristas_grafos_original, clf):
+                #print("Hijo 1 es conexo no se descarta")
+                nueva_descendencia.append(hijo1)
         if not nx.is_connected(hijo2):
-            print("Hijo 2 no es conexo, se descarta")
-            FuncionesAlgoritmo.conexo(hijo2, permutaciones_aristas_grafos_original)
-        nueva_descendencia.append(hijo1)
-        nueva_descendencia.append(hijo2)
+            
+            if FuncionesAlgoritmo.conexo(hijo2, permutaciones_aristas_grafos_original, clf):
+                #print("Hijo 2 es conexo y no se descarta")
+                nueva_descendencia.append(hijo2)
+        
     
     # Añadimos la nueva descendencia a la población actual
     poblacionActual.extend(nueva_descendencia)
@@ -186,3 +189,5 @@ print(poblacionActual)
 print("Fitness de la población final:")
 fitness_poblacion = [FuncionesAlgoritmo.fitness(x, grafos_originales) for x in poblacionActual]
 print(fitness_poblacion)
+valor_poblacion = [Importargrafos.oracle(nx.adjacency_matrix(x).toarray(), clf) for x in poblacionActual]
+print(valor_poblacion)

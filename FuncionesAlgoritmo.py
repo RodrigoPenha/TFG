@@ -85,7 +85,7 @@ def cruce(padre1, padre2, opcion):
     return opcion(padre1,padre2)
 
 # funcion que combierte un grafo desconexo en conexo
-def conexo(G, permutaciones_aristas_grafos_original):
+def conexo(G, permutaciones_aristas_grafos_original,clf):
     if not nx.is_connected(G):
         # Encuentra las componentes conexas
         componentes = list(nx.connected_components(G))
@@ -99,8 +99,11 @@ def conexo(G, permutaciones_aristas_grafos_original):
                 for permu in lista_permutaciones: # Interseccion de las aristas de las permutaciones de grafos originales de un mismo tamaño sin importar el orden
                         for arista in permu: # Selecciona una arista de la interseccion y comprueba si coincide con alguna de las posibles aristas
                             if arista in posibles_aristas:
-                                G.add_edge(*arista)
-                                break
+                                g_aux = G.copy()
+                                g_aux.add_edge(*arista)
+                                if Importargrafos.oracle(nx.adjacency_matrix(g_aux).toarray(), clf):
+                                    G.add_edge(*arista)
+                                    break
                         else:
                             break
                 else:
@@ -109,9 +112,8 @@ def conexo(G, permutaciones_aristas_grafos_original):
             else:
                 continue # Se ha podido conectar las componentes con aristas de los grafos originales y se pasa a la siguiente iteracion
             print("No se ha podido conectar las componentes con aristas de los grafos originales")
-            nodo1 = random.choice(componente_actual)
-            nodo2 = random.choice(siguiente_componente)
-            G.add_edge(nodo1, nodo2)
+            return False
+    return True
 
 def OFS (G,clf):
     #TODO
@@ -122,12 +124,12 @@ def fitness (G, Originales: list):
     '''
     Distancia de edicion entre el grafo G y los grafos originales
     '''
-    print("Calculando fitness")
+    #print("Calculando fitness")
     mean_distance = 0
     for grafo in Originales:
         mean_distance += len(set(grafo.edges).difference(set(G.edges)))
     result = mean_distance/len(Originales)
-    print(f"Fitness: {result}")
+    #print(f"Fitness: {result}")
     return result
 
 
