@@ -11,8 +11,8 @@ import networkx as nx
 import numpy as np
 # import random
 import math
-import random
 import Importargrafos
+import ofs #Algortimo de busqueda heuristica de un grafo contrafactual implementado por Mónica
 
 def graphToRepr (G):
     A = nx.adjacency_matrix(G).toarray()
@@ -115,10 +115,6 @@ def conexo(G, permutaciones_aristas_grafos_original,clf):
             return False
     return True
 
-def OFS (G,clf):
-    #TODO
-    
-    return G
 
 def fitness (G, Originales: list):
     '''

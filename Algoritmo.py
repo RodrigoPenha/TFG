@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 import itertools
 
 import os
+
+from ofs import ofs
 # G = nx.Graph()
 
 # G.add_nodes_from(['v1','v2','v3','v4'])
@@ -87,17 +89,22 @@ while n > 0:
     if Importargrafos.oracle(grafo, clf) == 1:
         grafos_originales.append(grafo)
         n = n-1
-'''
+
 for grafo in grafos_originales:
-    poblacionInicial.append(FuncionesAlgoritmo.OFS(grafo, clf))
-'''
+    i = 0
+    contrafactual = None
+    while contrafactual is None:
+        contrafactual = ofs(grafo, clf)
+        i += 1
+    poblacionInicial.append(contrafactual)
+print(f"numero de errores {i} \n")
 # Provisional hasta tener un algoritmo que encuentre contrafactuales
-n = 5 
-while n > 0:
-    grafo = graphs[random.choice(list(graphs.keys()))][1] # elegimos un grafo aleatorio el diccionario nos devuelve una tupla de etiqueta y grafo
-    if Importargrafos.oracle(grafo, clf) == 0:
-        poblacionInicial.append(grafo)
-        n = n-1
+# n = 5 
+# while n > 0:
+#     grafo = graphs[random.choice(list(graphs.keys()))][1] # elegimos un grafo aleatorio el diccionario nos devuelve una tupla de etiqueta y grafo
+#     if Importargrafos.oracle(grafo, clf) == 0:
+#         poblacionInicial.append(grafo)
+#         n = n-1
 
 print(f"población inicial {poblacionInicial}")
 print(f"grafos originales {grafos_originales}")
@@ -110,8 +117,8 @@ grafos_originales = [nx.from_numpy_array(grafo) for grafo in grafos_originales]
 parejas = list(itertools.combinations(poblacionActual, 2))
 
 # Parámetros del algoritmo genético
-max_individuos = 40  # Número máximo de individuos en la población
-num_iteraciones = 15  # Número de iteraciones de cruce
+max_individuos = 25  # Número máximo de individuos en la población
+num_iteraciones = 10  # Número de iteraciones de cruce
 
 # para cada permutacion de los grafos originales calculamos la interseccion de las aristas y las guardamos en la lista 
 # Lista para guardar las combinaciones agrupadas por tamaño (excluyendo tamaño 1)
@@ -133,15 +140,15 @@ for combinaciones in combinaciones_grafos:
         lista_permutaciones.append(aristas)
     permutaciones_aristas_grafos_original.append(lista_permutaciones)
 
-print(f"len permutaciones {len(permutaciones_aristas_grafos_original)}")
-print(f"len permutaciones0 {len(permutaciones_aristas_grafos_original[0])}")
-print(f"len permutaciones0,0 {len(permutaciones_aristas_grafos_original[0][0])}")
-print(f"len permutaciones1 {len(permutaciones_aristas_grafos_original[1])}")
-print(f"len permutaciones1,0 {len(permutaciones_aristas_grafos_original[1][0])}")
-print(f"len permutaciones2 {len(permutaciones_aristas_grafos_original[2])}")
-print(f"len permutaciones2,0 {len(permutaciones_aristas_grafos_original[2][0])}")
-print(f"len permutaciones3 {len(permutaciones_aristas_grafos_original[3])}")
-print(f"len permutaciones3,0 {len(permutaciones_aristas_grafos_original[3][0])}")
+# print(f"len permutaciones {len(permutaciones_aristas_grafos_original)}")
+# print(f"len permutaciones0 {len(permutaciones_aristas_grafos_original[0])}")
+# print(f"len permutaciones0,0 {len(permutaciones_aristas_grafos_original[0][0])}")
+# print(f"len permutaciones1 {len(permutaciones_aristas_grafos_original[1])}")
+# print(f"len permutaciones1,0 {len(permutaciones_aristas_grafos_original[1][0])}")
+# print(f"len permutaciones2 {len(permutaciones_aristas_grafos_original[2])}")
+# print(f"len permutaciones2,0 {len(permutaciones_aristas_grafos_original[2][0])}")
+# print(f"len permutaciones3 {len(permutaciones_aristas_grafos_original[3])}")
+# print(f"len permutaciones3,0 {len(permutaciones_aristas_grafos_original[3][0])}")
 
 
 for iteracion in range(num_iteraciones):
@@ -181,7 +188,7 @@ for iteracion in range(num_iteraciones):
         poblacionActual = sorted(poblacionActual, key=lambda x: FuncionesAlgoritmo.fitness(x,grafos_originales))[:max_individuos]
 
     # Mostrar el estado de la población
-    print(f"Población actual ({len(poblacionActual)} individuos): {poblacionActual}")
+    #print(f"Población actual ({len(poblacionActual)} individuos): {poblacionActual}")
 
 # Resultado final
 print("\nPoblación final:")
