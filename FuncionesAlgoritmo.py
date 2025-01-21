@@ -84,9 +84,10 @@ def cruce(padre1, padre2, opcion):
         raise ValueError(" La funcion de cruce no esta implementada")    
     return opcion(padre1,padre2)
 
-# funcion que combierte un grafo desconexo en conexo
-def conexo(G, permutaciones_aristas_grafos_original,clf):
+# funcion que combierte un grafo desconexo en conexo de
+def conexo(G, permutaciones_aristas_grafos_original,clf, objetivo):
     if not nx.is_connected(G):
+        print("El grafo no es conexo")
         # Encuentra las componentes conexas
         componentes = list(nx.connected_components(G))
         
@@ -101,7 +102,7 @@ def conexo(G, permutaciones_aristas_grafos_original,clf):
                             if arista in posibles_aristas:
                                 g_aux = G.copy()
                                 g_aux.add_edge(*arista)
-                                if Importargrafos.oracle(nx.adjacency_matrix(g_aux).toarray(), clf):
+                                if clasificar(g_aux, clf) == objetivo:
                                     G.add_edge(*arista)
                                     break
                         else:
@@ -113,6 +114,7 @@ def conexo(G, permutaciones_aristas_grafos_original,clf):
                 continue # Se ha podido conectar las componentes con aristas de los grafos originales y se pasa a la siguiente iteracion
             print("No se ha podido conectar las componentes con aristas de los grafos originales")
             return False
+        
     return True
 
 

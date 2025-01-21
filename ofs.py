@@ -33,7 +33,7 @@ def ofs(E, clf, k = 5, max = 2000,):
                 # Selecciona una arista cualquiera que esté contenida en E y no en edges
                 edge = pick(matrix_and_list(E, edges, 0), 1)
                 if edge is None:
-                    print("Error: It doesn't exists more edges")
+                    #print("Error: It doesn't exists more edges")
                     return None
                 # La arista es eliminada del grafo contrafactual candidato y añadida al conjunto edges
                 mod_edge_graph(E_c, edge, 0)
