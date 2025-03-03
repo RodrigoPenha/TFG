@@ -13,28 +13,46 @@ import networkx as nx
 import random
 import matplotlib.pyplot as plt
 import itertools
-from ofs import ofs
+from sortedcontainers import SortedKeyList
 
-def algoritmo_genetico(num_individuos, cruce, generaciones, originales, iniciales, clf):
+from obs import obs
+from ofs import ofs2
+
+
+class Individuo:
+    def __init__(self, grafo, grafos_originales_nx):
+        self.grafo = grafo
+        self.fitness = FuncionesAlgoritmo.fitness(grafo, grafos_originales_nx)
+
+    def __repr__(self):
+        return f"Individuo({self.fitness})"
+
+def seleccion_ruleta(poblacion: list[Individuo]):
+    fitness_inverso = [1/f.fitness for f in poblacion]  # Como es minimización
+    suma_fitness = sum(fitness_inverso)
+    probabilidades = [f/suma_fitness for f in fitness_inverso]
+
+    seleccionados = random.choices(poblacion, weights=probabilidades, k=2)  # Selecciona 2 padres
+    return seleccionados
+
+def algoritmo_genetico(num_individuos, cruce, iteraciones, originales, iniciales, clf):
 
     
 
     # Convertimos las representaciones de los grafos a objetos de la clase nx.Graph
-
-    poblacionActual = [nx.from_numpy_array(grafo) for grafo in iniciales]
     grafos_originales_nx = [nx.from_numpy_array(grafo) for grafo in originales]
+    # creamos la sorted list de los individuos e introducimos los grafos iniciales
+    poblacionActual = [Individuo(nx.from_numpy_array(grafo), grafos_originales_nx) for grafo in iniciales]
+    
+    # Ordenamos la población actual por fitness
+    poblacionActual = SortedKeyList(poblacionActual, key=lambda x: x.fitness)
+    
 
     # Obtenemos la clasificación que tienen que tener los grafos contrafactuales
-    objetivo =  1 - FuncionesAlgoritmo.clasificar(poblacionActual[0], clf)
+    objetivo =  1 - FuncionesAlgoritmo.clasificar(poblacionActual[0].grafo, clf)
 
     print("Fitness de la población inicial:")
-    fitness_poblacion = [FuncionesAlgoritmo.fitness(x, grafos_originales_nx) for x in poblacionActual]
-    print(fitness_poblacion)
-
-    parejas = list(itertools.combinations(poblacionActual, 2))
-
-    # Parámetros del algoritmo genético
-    
+    print(poblacionActual)   
 
     # para cada permutacion de los grafos originales calculamos la interseccion de las aristas y las guardamos en la lista 
     # Lista para guardar las combinaciones agrupadas por tamaño (excluyendo tamaño 1)
@@ -56,69 +74,60 @@ def algoritmo_genetico(num_individuos, cruce, generaciones, originales, iniciale
             lista_permutaciones.append(aristas)
         permutaciones_aristas_grafos_original.append(lista_permutaciones)
 
-    for iteracion in range(generaciones):
-        # print(f"\nIteración {iteracion + 1}")
+    for iteracion in range(iteraciones):
+        print(f"\nIteración {iteracion + 1}")
         
-        # Generamos todas las combinaciones de parejas en la población actual.
-        parejas = list(itertools.combinations(poblacionActual, 2))
-        
-        # Creamos una lista para almacenar la nueva descendencia generada en esta iteración.
-        nueva_descendencia = []
         
         # Realizamos el cruce para cada pareja y añadimos los hijos a la lista de descendencia.
-        for padre, madre in parejas:
-            padre = FuncionesAlgoritmo.graphToRepr(padre)
-            madre = FuncionesAlgoritmo.graphToRepr(madre)
-            hijo1, hijo2 = FuncionesAlgoritmo.cruce(padre, madre, cruce)
-            # Comprobamos que los hijos sean conexos
-            hijo1 = FuncionesAlgoritmo.reprToGraph(hijo1)
-            hijo2 = FuncionesAlgoritmo.reprToGraph(hijo2)
+        # Selección de padres
+        padre, madre = seleccion_ruleta(poblacionActual)
+        # los transformamos a representaciones
+        repr_padre = FuncionesAlgoritmo.graphToRepr(padre.grafo)
+        repr_madre = FuncionesAlgoritmo.graphToRepr(madre.grafo)
+        # cruzamos los padres
+        hijo1, hijo2 = FuncionesAlgoritmo.cruce(repr_padre, repr_madre, cruce)
+        # los transformamos a grafos
+        hijo1 = FuncionesAlgoritmo.reprToGraph(hijo1)
+        hijo2 = FuncionesAlgoritmo.reprToGraph(hijo2)
 
-            if FuncionesAlgoritmo.conexo(hijo1, permutaciones_aristas_grafos_original, clf, objetivo):
-                #print("Hijo 1 es conexo no se descarta")
-                nueva_descendencia.append(hijo1)
+        # Comprobamos si los hijos son conexos
+        if FuncionesAlgoritmo.conexo(hijo1, permutaciones_aristas_grafos_original, clf, objetivo):
+            #print("Hijo 1 es conexo no se descarta")
+            poblacionActual.add(Individuo(hijo1, grafos_originales_nx))
+        else:
+            pass
+            #print("Hijo 1 no es conexo se descarta")
 
-            
-            if FuncionesAlgoritmo.conexo(hijo2, permutaciones_aristas_grafos_original, clf, objetivo):
-                #print("Hijo 2 es conexo y no se descarta")
-                nueva_descendencia.append(hijo2)
-
+        if FuncionesAlgoritmo.conexo(hijo2, permutaciones_aristas_grafos_original, clf, objetivo):
+            #print("Hijo 2 es conexo no se descarta")
+            poblacionActual.add(Individuo(hijo2, grafos_originales_nx))
+        else:
+            pass    
+            #print("Hijo 2 no es conexo se descarta")
         
-            
-            
-            
-        
-        # Añadimos la nueva descendencia a la población actual
-        print(f"Descendencia generada: {len(nueva_descendencia)} individuos")
-        poblacionActual.extend(nueva_descendencia)
         
         # Si la población supera el límite, nos quedamos con los 50 mejores individuos
         if len(poblacionActual) > num_individuos:
-            poblacionActual = sorted(poblacionActual, key=lambda x: FuncionesAlgoritmo.fitness(x,grafos_originales_nx))[:num_individuos]
+            del poblacionActual[num_individuos:]  #Borra desde num_individuos hasta el final
 
         # Mostrar el estado de la población
-        #print(f"Población actual ({len(poblacionActual)} individuos): {poblacionActual}")
-        print("Fitness de la población actual:")
-        fitness_poblacion = [FuncionesAlgoritmo.fitness(x, grafos_originales_nx) for x in poblacionActual]
-        print(fitness_poblacion)
+        # print("Fitness de la población actual:")
+        # print(poblacionActual)
 
     # Resultado final
     # print("\nPoblación final:")
     # print(poblacionActual)
     print("Fitness de la población final:")
-    fitness_poblacion = [FuncionesAlgoritmo.fitness(x, grafos_originales_nx) for x in poblacionActual]
-    print(fitness_poblacion)
-    valor_poblacion = [Importargrafos.oracle(nx.adjacency_matrix(x).toarray(), clf) for x in poblacionActual]
-    print(valor_poblacion)
-    return poblacionActual[0], FuncionesAlgoritmo.fitness(poblacionActual[0], grafos_originales_nx)
+    print(poblacionActual)
+    return poblacionActual[0].grafo, poblacionActual[0].fitness
 
 # importamos los grafos y el clasificador
 graphs,clf = Importargrafos.importgrafos()
 
 # parámetros del algoritmo genético
-numero_grafos = [2, 4, 6] # Número de grafos originales
-max_individuos = [10, 20, 30]  # Número máximo de individuos en la población
-num_iteraciones = [10, 20, 30]  # Número de iteraciones de cruce
+numero_grafos = [4, 6] # Número de grafos originales
+max_individuos = [30, 50, 100]  # Número máximo de individuos en la población
+num_iteraciones = [200, 500, 1000]  # Número de iteraciones de cruce
 op_cruce = [FuncionesAlgoritmo.cruce_un_punto, FuncionesAlgoritmo.cruce_dos_puntos]  # Operador de cruce
 
 
@@ -127,7 +136,7 @@ archivo_salida = "resultados.csv"
 
 grafos_originales = []
 
-random.seed(1234)
+random.seed(12345)
 
 while max_num_grafos > 0:
         grafo = graphs[random.choice(list(graphs.keys()))][1] # elegimos un grafo aleatorio el diccionario nos devuelve una tupla de etiqueta y grafo
@@ -141,13 +150,43 @@ for grafo in grafos_originales:
     # i = 0
     contrafactual = None
     while contrafactual is None:
-        contrafactual = ofs(grafo, clf)
+        print("Calculando contrafactual")
+        contrafactual = ofs2(grafo, clf)
         # i += 1
+    contrafactual = obs(grafo, contrafactual, clf, 5, 4000)
+    print("Contrafactual calculado")
     poblacionInicial.append(contrafactual)
-# print(f"numero de errores {i} \n")
 
-# print(f"población inicial {poblacionInicial}")
-# print(f"grafos originales {grafos_originales}")
+# matriz con las distancias de los grafos originales
+# Calcular la distancia de edición entre los grafos originales y guardar los resultados en una matriz
+distancias_edicion = [[0] * len(grafos_originales) for _ in range(len(grafos_originales))]
+print("Calculando distancias de edición entre los grafos originales")
+for i, grafo1 in enumerate(grafos_originales):
+    print(f"Calculando distancias de edición para el grafo {i}")
+    for j, grafo2 in enumerate(grafos_originales):
+        if i != j:
+            distancias_edicion[i][j] = len(set(nx.from_numpy_array(grafo1).edges).difference(set(nx.from_numpy_array(grafo2).edges))) + len(set(nx.from_numpy_array(grafo2).edges).difference(set(nx.from_numpy_array(grafo1).edges)))
+        else:
+            distancias_edicion[i][j] = 0  # La distancia de un grafo consigo mismo es 0
+
+print("Matriz de distancias de edición:")
+for fila in distancias_edicion:
+    print(f'{fila} media:{sum(fila)/(len(fila))}')
+
+# matriz con las distancias de los grafos en la población inicial
+distancias_edicion_poblacion = [[0] * len(poblacionInicial) for _ in range(len(poblacionInicial))]
+
+for i, grafo1 in enumerate(poblacionInicial):
+    print(f"Calculando distancias de edición para el grafo {i}")
+    for j, grafo2 in enumerate(grafos_originales):
+        distancias_edicion_poblacion[i][j] = len(set(nx.from_numpy_array(grafo1).edges).difference(set(nx.from_numpy_array(grafo2).edges))) + len(set(nx.from_numpy_array(grafo2).edges).difference(set(nx.from_numpy_array(grafo1).edges)))
+
+
+print("Matriz de distancias de edición de la población inicial:")
+for fila in distancias_edicion_poblacion:
+    print(f'{fila} media:{sum(fila)/(len(fila))}')
+
+
 
 # Escritura del fichero de resultados
 with open(archivo_salida, mode='w', newline='') as file:

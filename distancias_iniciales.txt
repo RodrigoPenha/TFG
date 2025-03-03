@@ -1,0 +1,20 @@
+Matriz de distancias de edición:
+[0, 1314, 1288, 1355, 1347, 1314] media:1323.6
+[1314, 0, 1239, 1234, 1329, 0] media:1023.2
+[1288, 1239, 0, 1287, 1335, 1239] media:1277.6
+[1355, 1234, 1287, 0, 1388, 1234] media:1299.6
+[1347, 1329, 1335, 1388, 0, 1329] media:1345.6
+[1314, 0, 1239, 1234, 1329, 0] media:1023.2
+Calculando distancias de edición para el grafo 0
+Calculando distancias de edición para el grafo 1
+Calculando distancias de edición para el grafo 2
+Calculando distancias de edición para el grafo 3
+Calculando distancias de edición para el grafo 4
+Calculando distancias de edición para el grafo 5
+Matriz de distancias de edición de la población inicial:
+[75, 1384, 1358, 1422, 1420, 1384] media:1408.6
+[1318, 5, 1244, 1239, 1333, 5] media:1028.8
+[1302, 1254, 15, 1302, 1349, 1254] media:1295.2
+[1415, 1294, 1346, 66, 1447, 1294] media:1372.4
+[1377, 1356, 1364, 1418, 32, 1356] media:1380.6
+[1319, 5, 1244, 1239, 1334, 5] media:1029.2

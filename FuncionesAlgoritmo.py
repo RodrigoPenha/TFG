@@ -6,6 +6,7 @@ Created on Thu Oct 24 12:25:18 2024
 """
 
 import itertools
+import random
 import networkx as nx
 # import matplotlib.pyplot as plt
 import numpy as np
@@ -84,37 +85,54 @@ def cruce(padre1, padre2, opcion):
         raise ValueError(" La funcion de cruce no esta implementada")    
     return opcion(padre1,padre2)
 
+def elegir_arista_ponderada(listas_aristas, scores):
+    # Construir aristas y pesos en una sola pasada
+    aristas, pesos = zip(*(
+        (arista, score)
+        for lista, score in zip(listas_aristas, scores)
+        for arista in lista
+    ))
+
+    # Elegir una arista al azar según la distribución de pesos
+    return random.choices(aristas, weights=pesos, k=1)[0]
+
 # funcion que combierte un grafo desconexo en conexo de
-def conexo(G, permutaciones_aristas_grafos_original,clf, objetivo):
+def conexo(G, permutaciones_aristas_grafos_original,clf, objetivo, max_iter=500, max_aristas=10):
     if not nx.is_connected(G):
-        print("El grafo no es conexo")
+        #print("El grafo no es conexo")
         # Encuentra las componentes conexas
         componentes = list(nx.connected_components(G))
         
         # Conectar cada componente con la siguiente
-        for i in range(len(componentes) - 1):
-            componente_actual = list(componentes[i])
-            siguiente_componente = list(componentes[i + 1])
-            posibles_aristas = [x for x in itertools.product(componente_actual, siguiente_componente)]
-            for lista_permutaciones in permutaciones_aristas_grafos_original:
-                for permu in lista_permutaciones: # Interseccion de las aristas de las permutaciones de grafos originales de un mismo tamaño sin importar el orden
-                        for arista in permu: # Selecciona una arista de la interseccion y comprueba si coincide con alguna de las posibles aristas
-                            if arista in posibles_aristas:
-                                g_aux = G.copy()
-                                g_aux.add_edge(*arista)
-                                if clasificar(g_aux, clf) == objetivo:
-                                    G.add_edge(*arista)
-                                    break
+        scores = [i/len(permutaciones_aristas_grafos_original)+1 for i in range(len(permutaciones_aristas_grafos_original)+1, 0, -1)]
+        # Solo conectamos cuando hay 2 componentes
+        if len(componentes) == 2:
+            componente_actual = list(componentes[0])
+            siguiente_componente = list(componentes[1])
+            posibles_aristas = set([x for x in itertools.product(componente_actual, siguiente_componente)])
+            posibles_aristas_en_permutaciones = []
+            for permutaciones in permutaciones_aristas_grafos_original:
+                aristas_mismo_score = []
+                for intersecion in permutaciones:
+                    aristas_mismo_score.extend(list(posibles_aristas.intersection(intersecion)))
+                posibles_aristas_en_permutaciones.append(aristas_mismo_score)
+            # añadir las aristas que no estan en la interseccion
+            posibles_aristas_en_permutaciones.append(list(posibles_aristas))
+            for i in range(max_aristas):
+                for _ in range(max_iter):
+                    aristas = [elegir_arista_ponderada(posibles_aristas_en_permutaciones, scores) for _ in range(i+1)]
+                    g_aux = G.copy()
+                    for arista in aristas:
+                        g_aux.add_edge(*arista)
+                    if clasificar(g_aux, clf) == objetivo:
+                        for arista in aristas:
+                            G.add_edge(*arista)
+                        if nx.is_connected(G):
+                            return True
                         else:
-                            break
-                else:
-                    break
-                # Selecciona un nodo aleatorio de cada componente y conecta ambos
-            else:
-                continue # Se ha podido conectar las componentes con aristas de los grafos originales y se pasa a la siguiente iteracion
-            print("No se ha podido conectar las componentes con aristas de los grafos originales")
-            return False
-        
+                            print("Error conectando los componentes")
+        #retorno False si no se pudo conectar las componentes
+        return False
     return True
 
 
@@ -125,7 +143,7 @@ def fitness (G, Originales: list):
     #print("Calculando fitness")
     mean_distance = 0
     for grafo in Originales:
-        mean_distance += len(set(grafo.edges).difference(set(G.edges)))
+        mean_distance += len(set(grafo.edges).difference(set(G.edges))) + len(set(G.edges).difference(set(grafo.edges)))
     result = mean_distance/len(Originales)
     #print(f"Fitness: {result}")
     return result
