@@ -9,9 +9,9 @@ import csv
 import time
 import FuncionesAlgoritmo
 import Importargrafos
+import Visualizacion
 import networkx as nx
 import random
-import matplotlib.pyplot as plt
 import itertools
 from sortedcontainers import SortedKeyList
 
@@ -144,6 +144,10 @@ def algoritmo_genetico(num_individuos, cruce, iteraciones, originales, iniciales
         print(f"Individuo {i}: {individuo.fitness}")
         for j, grafo in enumerate(grafos_originales_nx):
              print(f"distancia grafo {j}: {len(set(individuo.grafo.edges).symmetric_difference(set(grafo.edges)))}")
+
+    # Guardamos los 5 mejores grafos (imagen + GraphML reutilizable)
+    Visualizacion.guardar_mejores_grafos(poblacionActual, n=5)
+
     return poblacionActual[0].grafo, poblacionActual[0].fitness
 
 # importamos los grafos y el clasificador
@@ -151,9 +155,9 @@ random.seed(12345)
 graphs,clf = Importargrafos.importgrafos()
 
 # parámetros del algoritmo genético
-numero_grafos = [2] # Número de grafos originales
-max_individuos = [500]  # Número máximo de individuos en la población
-num_iteraciones = [10000]  # Número de iteraciones de cruce
+numero_grafos = [5] # Número de grafos originales
+max_individuos = [200]  # Número máximo de individuos en la población
+num_iteraciones = [25000]  # Número de iteraciones de cruce
 op_cruce = [FuncionesAlgoritmo.cruce_uniforme]  # Operador de cruce
 
 
@@ -188,6 +192,10 @@ for grafo2 in grafos_originales:
     contrafactual = obs(grafo2, contrafactual, clf, 5, 4000)
     print("Contrafactual calculado")
     poblacionInicial.append(contrafactual)
+
+# Guardamos los grafos originales y los contrafactuales iniciales (imagen + GraphML)
+Visualizacion.guardar_grafos(grafos_originales, "grafos_originales")
+Visualizacion.guardar_contrafactuales(poblacionInicial, grafos_originales, "contrafactuales")
 
 # matriz con las distancias de los grafos originales
 # Calcular la distancia de edición entre los grafos originales y guardar los resultados en una matriz
