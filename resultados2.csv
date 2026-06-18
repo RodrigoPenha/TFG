@@ -1,0 +1,3 @@
+Numero_grafos,Poblacion_maxima,Cruce,Numero_iteraciones,Score,Tiempo_de_ejecución
+2,1000,cruce_un_punto,20000,1291.0,1147.6243040561676
+2,1000,cruce_dos_puntos,20000,1288.0,1148.8595979213715

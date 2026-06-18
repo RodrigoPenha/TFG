@@ -1,12 +1,7 @@
 import copy
 import random
-<<<<<<< HEAD
 from Importargrafos import oracle
 from ofs import sort_edges, mod_edge_graph
-=======
-from preprocesado import oracle
-from ofs2 import sort_edges, mod_edge_graph
->>>>>>> fdb1d8e9fa551c2c87a06120f98cb04fd33c6b6f
 import networkx as nx
 
 '''
@@ -17,18 +12,11 @@ encontrado Ec1 por OFS.
 E = grafo original a la que se quiere volver
 Ec1 = grafo obtenido en el algoritmo previo (OFS)
 k = número de aristas a modificar en cada iteración
-<<<<<<< HEAD
 clf = clasificador necesario para la función oracle
 max = número máximo de iteraciones a realizar
 subset = variable booleano para seleccionar el algoritmo: True indica la versión implementada por nosotros; y False el original
 '''
 def obs(E, Ec1, clf, k = 5, max = 2000, subset = False): 
-=======
-max = número máximo de iteraciones a realizar
-subset = variable booleano para seleccionar el algoritmo: True indica la versión implementada por nosotros; y False el original
-'''
-def obs(E, Ec1, k = 5, max = 2000, subset = False): 
->>>>>>> fdb1d8e9fa551c2c87a06120f98cb04fd33c6b6f
     E_c = copy.deepcopy(Ec1)
     i = 0
     E_d = symmetric_diff(E, E_c) # Consigue una lista de aristas que tienen diferentes E y E_c
@@ -37,11 +25,7 @@ def obs(E, Ec1, k = 5, max = 2000, subset = False):
         k = min(k, len(E_d))
         E_dk = pick(k, E_d, subset) 
         E_ci = matrix_edges(E_c, E_dk)
-<<<<<<< HEAD
         if oracle(E_ci, clf) == 1 - oracle(E, clf): # Si E_ci sigue siendo el grafo contrafactual óptimo hasta el momento
-=======
-        if oracle(E_ci) == 1 - oracle(E): # Si E_ci sigue siendo el grafo contrafactual óptimo hasta el momento
->>>>>>> fdb1d8e9fa551c2c87a06120f98cb04fd33c6b6f
             k += 1
             E_c = copy.deepcopy(E_ci)
             E_d = symmetric_diff(E, E_c)

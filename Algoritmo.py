@@ -17,6 +17,7 @@ from sortedcontainers import SortedKeyList
 
 from obs import obs
 from ofs import ofs2
+import pickle
 
 
 class Individuo:
@@ -31,8 +32,19 @@ def seleccion_ruleta(poblacion: list[Individuo]):
     fitness_inverso = [1/f.fitness for f in poblacion]  # Como es minimización
     suma_fitness = sum(fitness_inverso)
     probabilidades = [f/suma_fitness for f in fitness_inverso]
+    probabilidades_acumuladas = list(itertools.accumulate(probabilidades))
+    # Elegir el primer individuo
+    r1 = random.random()
+    ind1 = next(i for i, prob in enumerate(probabilidades_acumuladas) if r1 <= prob)
 
-    seleccionados = random.choices(poblacion, weights=probabilidades, k=2)  # Selecciona 2 padres
+    # Elegir el segundo índice asegurando que sea distinto del primero
+    while True:
+        r2 = random.random()
+        ind2 = next(i for i, prob in enumerate(probabilidades_acumuladas) if r2 <= prob)
+        if ind1 != ind2:
+            break
+
+    seleccionados = poblacion[ind1], poblacion[ind2]  # Selecciona 2 padres
     return seleccionados
 
 def algoritmo_genetico(num_individuos, cruce, iteraciones, originales, iniciales, clf):
@@ -74,9 +86,17 @@ def algoritmo_genetico(num_individuos, cruce, iteraciones, originales, iniciales
             lista_permutaciones.append(aristas)
         permutaciones_aristas_grafos_original.append(lista_permutaciones)
 
+    for i, individuo in enumerate(poblacionActual):
+        print(f"Individuo {i}: {individuo.fitness}")
+        for j, grafo in enumerate(grafos_originales_nx):
+            print(f"distancia grafo {j}: {len(set(individuo.grafo.edges).symmetric_difference(set(grafo.edges)))}")
+
     for iteracion in range(iteraciones):
-        print(f"\nIteración {iteracion + 1}")
-        
+        # print(f"\nIteración {iteracion + 1}")
+        # for i, individuo in enumerate(poblacionActual):
+        #     print(f"Individuo {i}: {individuo.fitness}")
+        #     for j, grafo in enumerate(grafos_originales_nx):
+        #         print(f"distancia grafo {j}: {len(set(individuo.grafo.edges).symmetric_difference(set(grafo.edges)))}")
         
         # Realizamos el cruce para cada pareja y añadimos los hijos a la lista de descendencia.
         # Selección de padres
@@ -93,17 +113,19 @@ def algoritmo_genetico(num_individuos, cruce, iteraciones, originales, iniciales
         # Comprobamos si los hijos son conexos
         if FuncionesAlgoritmo.conexo(hijo1, permutaciones_aristas_grafos_original, clf, objetivo):
             #print("Hijo 1 es conexo no se descarta")
-            poblacionActual.add(Individuo(hijo1, grafos_originales_nx))
+            if FuncionesAlgoritmo.clasificar(hijo1, clf) == objetivo:
+                #print("Hijo 1 clasifica igual que el objetivo")
+                poblacionActual.add(Individuo(hijo1, grafos_originales_nx))
         else:
             pass
-            #print("Hijo 1 no es conexo se descarta")
+            print("Hijo 1 no es conexo se descarta")
 
         if FuncionesAlgoritmo.conexo(hijo2, permutaciones_aristas_grafos_original, clf, objetivo):
-            #print("Hijo 2 es conexo no se descarta")
-            poblacionActual.add(Individuo(hijo2, grafos_originales_nx))
-        else:
-            pass    
-            #print("Hijo 2 no es conexo se descarta")
+            if FuncionesAlgoritmo.clasificar(hijo2, clf) == objetivo:
+                #print("Hijo 2 clasifica igual que el objetivo")
+                poblacionActual.add(Individuo(hijo2, grafos_originales_nx))
+        else:    
+            print("Hijo 2 no es conexo se descarta")
         
         
         # Si la población supera el límite, nos quedamos con los 50 mejores individuos
@@ -118,17 +140,21 @@ def algoritmo_genetico(num_individuos, cruce, iteraciones, originales, iniciales
     # print("\nPoblación final:")
     # print(poblacionActual)
     print("Fitness de la población final:")
-    print(poblacionActual)
+    for i, individuo in enumerate(poblacionActual):
+        print(f"Individuo {i}: {individuo.fitness}")
+        for j, grafo in enumerate(grafos_originales_nx):
+             print(f"distancia grafo {j}: {len(set(individuo.grafo.edges).symmetric_difference(set(grafo.edges)))}")
     return poblacionActual[0].grafo, poblacionActual[0].fitness
 
 # importamos los grafos y el clasificador
+random.seed(12345)
 graphs,clf = Importargrafos.importgrafos()
 
 # parámetros del algoritmo genético
-numero_grafos = [4, 6] # Número de grafos originales
-max_individuos = [30, 50, 100]  # Número máximo de individuos en la población
-num_iteraciones = [200, 500, 1000]  # Número de iteraciones de cruce
-op_cruce = [FuncionesAlgoritmo.cruce_un_punto, FuncionesAlgoritmo.cruce_dos_puntos]  # Operador de cruce
+numero_grafos = [2] # Número de grafos originales
+max_individuos = [500]  # Número máximo de individuos en la población
+num_iteraciones = [10000]  # Número de iteraciones de cruce
+op_cruce = [FuncionesAlgoritmo.cruce_uniforme]  # Operador de cruce
 
 
 max_num_grafos = max(numero_grafos)
@@ -136,24 +162,30 @@ archivo_salida = "resultados.csv"
 
 grafos_originales = []
 
-random.seed(12345)
+aleatorio = True
 
-while max_num_grafos > 0:
-        grafo = graphs[random.choice(list(graphs.keys()))][1] # elegimos un grafo aleatorio el diccionario nos devuelve una tupla de etiqueta y grafo
-        if Importargrafos.oracle(grafo, clf) == 0:
-            grafos_originales.append(grafo)
-            max_num_grafos = max_num_grafos-1
+if aleatorio:
+    while max_num_grafos > 0:
+            grafo2 = graphs[random.choice(list(graphs.keys()))][1] # elegimos un grafo aleatorio el diccionario nos devuelve una tupla de etiqueta y grafo
+            if Importargrafos.oracle(grafo2, clf) == 0:
+                grafos_originales.append(grafo2)
+                max_num_grafos = max_num_grafos-1
+else:
+    #cargamos los grafos de un fichero
+    archivo_grafos = "grafos_cercanos.pkl"
+    with open(archivo_grafos, "rb") as f:
+        grafos_originales = pickle.load(f)
 
 poblacionInicial = list()
     
-for grafo in grafos_originales:
+for grafo2 in grafos_originales:
     # i = 0
     contrafactual = None
     while contrafactual is None:
         print("Calculando contrafactual")
-        contrafactual = ofs2(grafo, clf)
+        contrafactual = ofs2(grafo2, clf)
         # i += 1
-    contrafactual = obs(grafo, contrafactual, clf, 5, 4000)
+    contrafactual = obs(grafo2, contrafactual, clf, 5, 4000)
     print("Contrafactual calculado")
     poblacionInicial.append(contrafactual)
 

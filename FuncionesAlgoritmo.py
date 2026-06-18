@@ -80,8 +80,21 @@ def cruce_dos_puntos(padre1, padre2):
     
     return hijo1, hijo2
 
+def cruce_uniforme(padre1, padre2):
+    if len(padre1) != len(padre2):
+        raise ValueError('Los padres tienen que tener el mismo tamaño')
+        
+    # Creamos una mascara aleatoria para el cruce
+    mascara = np.random.randint(0, 2, size=len(padre1)).astype(bool)
+    
+    # Creamos los hijos
+    hijo1 = np.where(mascara, padre1, padre2)
+    hijo2 = np.where(mascara, padre2, padre1)
+
+    return hijo1, hijo2
+
 def cruce(padre1, padre2, opcion):
-    if opcion not in [cruce_dos_puntos, cruce_un_punto]:
+    if opcion not in [cruce_dos_puntos, cruce_un_punto, cruce_uniforme]:
         raise ValueError(" La funcion de cruce no esta implementada")    
     return opcion(padre1,padre2)
 
@@ -136,17 +149,25 @@ def conexo(G, permutaciones_aristas_grafos_original,clf, objetivo, max_iter=500,
     return True
 
 
-def fitness (G, Originales: list):
-    '''
-    Distancia de edicion entre el grafo G y los grafos originales
-    '''
-    #print("Calculando fitness")
-    mean_distance = 0
-    for grafo in Originales:
-        mean_distance += len(set(grafo.edges).difference(set(G.edges))) + len(set(G.edges).difference(set(grafo.edges)))
-    result = mean_distance/len(Originales)
-    #print(f"Fitness: {result}")
-    return result
+def fitness(G, originales: list):
+    """
+    Calcula la distancia de edición promedio entre el grafo G y una lista de grafos originales.
+
+    Parámetros:
+    - G: Grafo de NetworkX.
+    - originales: Lista de grafos de NetworkX.
+
+    Retorna:
+    - Distancia de edición promedio entre G y los grafos originales.
+    """
+    if not originales:
+        raise ValueError("La lista de grafos originales no puede estar vacía.")
+
+    # Calcular la distancia de edición promedio
+    total_distance = sum(
+        len(set(grafo.edges).symmetric_difference(set(G.edges))) for grafo in originales
+    )
+    return total_distance / len(originales)
 
 
 
