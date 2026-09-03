@@ -1,0 +1,445 @@
+grupo                                        solucion  clase  esperada  conexo  veredicto
+---------------------------------------------------------------------------------------------------
+aleatorios/N11/clase0                       inicial_1      1         1   False  INVALIDO: inconexo
+aleatorios/N11/clase0                       inicial_2      1         1    True  OK
+aleatorios/N11/clase0                       inicial_3      1         1    True  OK
+aleatorios/N11/clase0                       inicial_4      1         1   False  INVALIDO: inconexo
+aleatorios/N11/clase0                       inicial_5      1         1    True  OK
+aleatorios/N11/clase0                       inicial_6      1         1    True  OK
+aleatorios/N11/clase0                       inicial_7      1         1    True  OK
+aleatorios/N11/clase0                       inicial_8      1         1   False  INVALIDO: inconexo
+aleatorios/N11/clase0                       inicial_9      1         1    True  OK
+aleatorios/N11/clase0                      inicial_10      1         1    True  OK
+aleatorios/N11/clase0                      inicial_11      1         1   False  INVALIDO: inconexo
+aleatorios/N11/clase0     cruce_uniforme_pob25_mejor1      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob25_mejor2      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob25_mejor3      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob25_mejor4      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob25_mejor5      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob25_mejor1      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob25_mejor2      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob25_mejor3      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob25_mejor4      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob25_mejor5      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob50_mejor1      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob50_mejor2      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob50_mejor3      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob50_mejor4      1         1    True  OK
+aleatorios/N11/clase0     cruce_uniforme_pob50_mejor5      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob50_mejor1      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob50_mejor2      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob50_mejor3      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob50_mejor4      1         1    True  OK
+aleatorios/N11/clase0     cruce_un_punto_pob50_mejor5      1         1    True  OK
+aleatorios/N11/clase0    cruce_uniforme_pob100_mejor1      1         1    True  OK
+aleatorios/N11/clase0    cruce_uniforme_pob100_mejor2      1         1    True  OK
+aleatorios/N11/clase0    cruce_uniforme_pob100_mejor3      1         1    True  OK
+aleatorios/N11/clase0    cruce_uniforme_pob100_mejor4      1         1    True  OK
+aleatorios/N11/clase0    cruce_uniforme_pob100_mejor5      1         1    True  OK
+aleatorios/N11/clase0    cruce_un_punto_pob100_mejor1      1         1    True  OK
+aleatorios/N11/clase0    cruce_un_punto_pob100_mejor2      1         1    True  OK
+aleatorios/N11/clase0    cruce_un_punto_pob100_mejor3      1         1    True  OK
+aleatorios/N11/clase0    cruce_un_punto_pob100_mejor4      1         1    True  OK
+aleatorios/N11/clase0    cruce_un_punto_pob100_mejor5      1         1    True  OK
+aleatorios/N2/clase0                        inicial_1      1         1    True  OK
+aleatorios/N2/clase0                        inicial_2      1         1   False  INVALIDO: inconexo
+aleatorios/N2/clase0      cruce_uniforme_pob25_mejor1      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob25_mejor2      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob25_mejor3      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob25_mejor4      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob25_mejor5      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob25_mejor1      1         1   False  INVALIDO: inconexo
+aleatorios/N2/clase0      cruce_un_punto_pob25_mejor2      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob25_mejor3      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob25_mejor4      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob25_mejor5      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob50_mejor1      1         1   False  INVALIDO: inconexo
+aleatorios/N2/clase0      cruce_uniforme_pob50_mejor2      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob50_mejor3      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob50_mejor4      1         1    True  OK
+aleatorios/N2/clase0      cruce_uniforme_pob50_mejor5      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob50_mejor1      1         1   False  INVALIDO: inconexo
+aleatorios/N2/clase0      cruce_un_punto_pob50_mejor2      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob50_mejor3      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob50_mejor4      1         1    True  OK
+aleatorios/N2/clase0      cruce_un_punto_pob50_mejor5      1         1    True  OK
+aleatorios/N2/clase0     cruce_uniforme_pob100_mejor1      1         1    True  OK
+aleatorios/N2/clase0     cruce_uniforme_pob100_mejor2      1         1    True  OK
+aleatorios/N2/clase0     cruce_uniforme_pob100_mejor3      1         1    True  OK
+aleatorios/N2/clase0     cruce_uniforme_pob100_mejor4      1         1    True  OK
+aleatorios/N2/clase0     cruce_uniforme_pob100_mejor5      1         1    True  OK
+aleatorios/N2/clase0     cruce_un_punto_pob100_mejor1      1         1   False  INVALIDO: inconexo
+aleatorios/N2/clase0     cruce_un_punto_pob100_mejor2      1         1    True  OK
+aleatorios/N2/clase0     cruce_un_punto_pob100_mejor3      1         1    True  OK
+aleatorios/N2/clase0     cruce_un_punto_pob100_mejor4      1         1    True  OK
+aleatorios/N2/clase0     cruce_un_punto_pob100_mejor5      1         1    True  OK
+aleatorios/N5/clase0                        inicial_1      1         1   False  INVALIDO: inconexo
+aleatorios/N5/clase0                        inicial_2      1         1    True  OK
+aleatorios/N5/clase0                        inicial_3      1         1   False  INVALIDO: inconexo
+aleatorios/N5/clase0                        inicial_4      1         1    True  OK
+aleatorios/N5/clase0                        inicial_5      1         1   False  INVALIDO: inconexo
+aleatorios/N5/clase0      cruce_uniforme_pob25_mejor1      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob25_mejor2      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob25_mejor3      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob25_mejor4      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob25_mejor5      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob25_mejor1      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob25_mejor2      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob25_mejor3      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob25_mejor4      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob25_mejor5      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob50_mejor1      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob50_mejor2      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob50_mejor3      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob50_mejor4      1         1    True  OK
+aleatorios/N5/clase0      cruce_uniforme_pob50_mejor5      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob50_mejor1      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob50_mejor2      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob50_mejor3      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob50_mejor4      1         1    True  OK
+aleatorios/N5/clase0      cruce_un_punto_pob50_mejor5      1         1    True  OK
+aleatorios/N5/clase0     cruce_uniforme_pob100_mejor1      1         1    True  OK
+aleatorios/N5/clase0     cruce_uniforme_pob100_mejor2      1         1    True  OK
+aleatorios/N5/clase0     cruce_uniforme_pob100_mejor3      1         1    True  OK
+aleatorios/N5/clase0     cruce_uniforme_pob100_mejor4      1         1    True  OK
+aleatorios/N5/clase0     cruce_uniforme_pob100_mejor5      1         1    True  OK
+aleatorios/N5/clase0     cruce_un_punto_pob100_mejor1      1         1    True  OK
+aleatorios/N5/clase0     cruce_un_punto_pob100_mejor2      1         1    True  OK
+aleatorios/N5/clase0     cruce_un_punto_pob100_mejor3      1         1    True  OK
+aleatorios/N5/clase0     cruce_un_punto_pob100_mejor4      1         1    True  OK
+aleatorios/N5/clase0     cruce_un_punto_pob100_mejor5      1         1    True  OK
+aleatorios/N8/clase0                        inicial_1      1         1    True  OK
+aleatorios/N8/clase0                        inicial_2      1         1    True  OK
+aleatorios/N8/clase0                        inicial_3      1         1   False  INVALIDO: inconexo
+aleatorios/N8/clase0                        inicial_4      1         1    True  OK
+aleatorios/N8/clase0                        inicial_5      1         1   False  INVALIDO: inconexo
+aleatorios/N8/clase0                        inicial_6      1         1    True  OK
+aleatorios/N8/clase0                        inicial_7      1         1   False  INVALIDO: inconexo
+aleatorios/N8/clase0                        inicial_8      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob25_mejor1      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob25_mejor2      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob25_mejor3      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob25_mejor4      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob25_mejor5      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob25_mejor1      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob25_mejor2      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob25_mejor3      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob25_mejor4      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob25_mejor5      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob50_mejor1      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob50_mejor2      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob50_mejor3      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob50_mejor4      1         1    True  OK
+aleatorios/N8/clase0      cruce_uniforme_pob50_mejor5      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob50_mejor1      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob50_mejor2      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob50_mejor3      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob50_mejor4      1         1    True  OK
+aleatorios/N8/clase0      cruce_un_punto_pob50_mejor5      1         1    True  OK
+aleatorios/N8/clase0     cruce_uniforme_pob100_mejor1      1         1    True  OK
+aleatorios/N8/clase0     cruce_uniforme_pob100_mejor2      1         1    True  OK
+aleatorios/N8/clase0     cruce_uniforme_pob100_mejor3      1         1    True  OK
+aleatorios/N8/clase0     cruce_uniforme_pob100_mejor4      1         1    True  OK
+aleatorios/N8/clase0     cruce_uniforme_pob100_mejor5      1         1    True  OK
+aleatorios/N8/clase0     cruce_un_punto_pob100_mejor1      1         1    True  OK
+aleatorios/N8/clase0     cruce_un_punto_pob100_mejor2      1         1    True  OK
+aleatorios/N8/clase0     cruce_un_punto_pob100_mejor3      1         1    True  OK
+aleatorios/N8/clase0     cruce_un_punto_pob100_mejor4      1         1    True  OK
+aleatorios/N8/clase0     cruce_un_punto_pob100_mejor5      1         1    True  OK
+cercanos/N11/clase0                         inicial_1      1         1   False  INVALIDO: inconexo
+cercanos/N11/clase0                         inicial_2      1         1   False  INVALIDO: inconexo
+cercanos/N11/clase0                         inicial_3      1         1    True  OK
+cercanos/N11/clase0                         inicial_4      1         1    True  OK
+cercanos/N11/clase0                         inicial_5      1         1    True  OK
+cercanos/N11/clase0                         inicial_6      1         1    True  OK
+cercanos/N11/clase0                         inicial_7      1         1    True  OK
+cercanos/N11/clase0                         inicial_8      1         1    True  OK
+cercanos/N11/clase0                         inicial_9      1         1    True  OK
+cercanos/N11/clase0                        inicial_10      1         1    True  OK
+cercanos/N11/clase0                        inicial_11      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob25_mejor1      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob25_mejor2      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob25_mejor3      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob25_mejor4      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob25_mejor5      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob25_mejor1      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob25_mejor2      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob25_mejor3      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob25_mejor4      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob25_mejor5      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob50_mejor1      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob50_mejor2      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob50_mejor3      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob50_mejor4      1         1    True  OK
+cercanos/N11/clase0       cruce_uniforme_pob50_mejor5      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob50_mejor1      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob50_mejor2      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob50_mejor3      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob50_mejor4      1         1    True  OK
+cercanos/N11/clase0       cruce_un_punto_pob50_mejor5      1         1    True  OK
+cercanos/N11/clase0      cruce_uniforme_pob100_mejor1      1         1    True  OK
+cercanos/N11/clase0      cruce_uniforme_pob100_mejor2      1         1    True  OK
+cercanos/N11/clase0      cruce_uniforme_pob100_mejor3      1         1    True  OK
+cercanos/N11/clase0      cruce_uniforme_pob100_mejor4      1         1    True  OK
+cercanos/N11/clase0      cruce_uniforme_pob100_mejor5      1         1    True  OK
+cercanos/N11/clase0      cruce_un_punto_pob100_mejor1      1         1    True  OK
+cercanos/N11/clase0      cruce_un_punto_pob100_mejor2      1         1    True  OK
+cercanos/N11/clase0      cruce_un_punto_pob100_mejor3      1         1    True  OK
+cercanos/N11/clase0      cruce_un_punto_pob100_mejor4      1         1    True  OK
+cercanos/N11/clase0      cruce_un_punto_pob100_mejor5      1         1    True  OK
+cercanos/N2/clase0                          inicial_1      1         1    True  OK
+cercanos/N2/clase0                          inicial_2      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob25_mejor1      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob25_mejor2      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob25_mejor3      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob25_mejor4      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob25_mejor5      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob25_mejor1      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob25_mejor2      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob25_mejor3      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob25_mejor4      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob25_mejor5      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob50_mejor1      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob50_mejor2      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob50_mejor3      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob50_mejor4      1         1    True  OK
+cercanos/N2/clase0        cruce_uniforme_pob50_mejor5      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob50_mejor1      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob50_mejor2      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob50_mejor3      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob50_mejor4      1         1    True  OK
+cercanos/N2/clase0        cruce_un_punto_pob50_mejor5      1         1    True  OK
+cercanos/N2/clase0       cruce_uniforme_pob100_mejor1      1         1    True  OK
+cercanos/N2/clase0       cruce_uniforme_pob100_mejor2      1         1    True  OK
+cercanos/N2/clase0       cruce_uniforme_pob100_mejor3      1         1    True  OK
+cercanos/N2/clase0       cruce_uniforme_pob100_mejor4      1         1    True  OK
+cercanos/N2/clase0       cruce_uniforme_pob100_mejor5      1         1    True  OK
+cercanos/N2/clase0       cruce_un_punto_pob100_mejor1      1         1    True  OK
+cercanos/N2/clase0       cruce_un_punto_pob100_mejor2      1         1    True  OK
+cercanos/N2/clase0       cruce_un_punto_pob100_mejor3      1         1    True  OK
+cercanos/N2/clase0       cruce_un_punto_pob100_mejor4      1         1    True  OK
+cercanos/N2/clase0       cruce_un_punto_pob100_mejor5      1         1    True  OK
+cercanos/N5/clase0                          inicial_1      1         1    True  OK
+cercanos/N5/clase0                          inicial_2      1         1    True  OK
+cercanos/N5/clase0                          inicial_3      1         1    True  OK
+cercanos/N5/clase0                          inicial_4      1         1    True  OK
+cercanos/N5/clase0                          inicial_5      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob25_mejor1      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob25_mejor2      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob25_mejor3      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob25_mejor4      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob25_mejor5      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob25_mejor1      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob25_mejor2      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob25_mejor3      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob25_mejor4      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob25_mejor5      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob50_mejor1      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob50_mejor2      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob50_mejor3      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob50_mejor4      1         1    True  OK
+cercanos/N5/clase0        cruce_uniforme_pob50_mejor5      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob50_mejor1      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob50_mejor2      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob50_mejor3      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob50_mejor4      1         1    True  OK
+cercanos/N5/clase0        cruce_un_punto_pob50_mejor5      1         1    True  OK
+cercanos/N5/clase0       cruce_uniforme_pob100_mejor1      1         1    True  OK
+cercanos/N5/clase0       cruce_uniforme_pob100_mejor2      1         1    True  OK
+cercanos/N5/clase0       cruce_uniforme_pob100_mejor3      1         1    True  OK
+cercanos/N5/clase0       cruce_uniforme_pob100_mejor4      1         1    True  OK
+cercanos/N5/clase0       cruce_uniforme_pob100_mejor5      1         1    True  OK
+cercanos/N5/clase0       cruce_un_punto_pob100_mejor1      1         1    True  OK
+cercanos/N5/clase0       cruce_un_punto_pob100_mejor2      1         1    True  OK
+cercanos/N5/clase0       cruce_un_punto_pob100_mejor3      1         1    True  OK
+cercanos/N5/clase0       cruce_un_punto_pob100_mejor4      1         1    True  OK
+cercanos/N5/clase0       cruce_un_punto_pob100_mejor5      1         1    True  OK
+cercanos/N8/clase0                          inicial_1      1         1    True  OK
+cercanos/N8/clase0                          inicial_2      1         1    True  OK
+cercanos/N8/clase0                          inicial_3      1         1    True  OK
+cercanos/N8/clase0                          inicial_4      1         1    True  OK
+cercanos/N8/clase0                          inicial_5      1         1    True  OK
+cercanos/N8/clase0                          inicial_6      1         1    True  OK
+cercanos/N8/clase0                          inicial_7      1         1    True  OK
+cercanos/N8/clase0                          inicial_8      1         1   False  INVALIDO: inconexo
+cercanos/N8/clase0        cruce_uniforme_pob25_mejor1      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob25_mejor2      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob25_mejor3      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob25_mejor4      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob25_mejor5      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob25_mejor1      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob25_mejor2      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob25_mejor3      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob25_mejor4      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob25_mejor5      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob50_mejor1      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob50_mejor2      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob50_mejor3      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob50_mejor4      1         1    True  OK
+cercanos/N8/clase0        cruce_uniforme_pob50_mejor5      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob50_mejor1      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob50_mejor2      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob50_mejor3      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob50_mejor4      1         1    True  OK
+cercanos/N8/clase0        cruce_un_punto_pob50_mejor5      1         1    True  OK
+cercanos/N8/clase0       cruce_uniforme_pob100_mejor1      1         1    True  OK
+cercanos/N8/clase0       cruce_uniforme_pob100_mejor2      1         1    True  OK
+cercanos/N8/clase0       cruce_uniforme_pob100_mejor3      1         1    True  OK
+cercanos/N8/clase0       cruce_uniforme_pob100_mejor4      1         1    True  OK
+cercanos/N8/clase0       cruce_uniforme_pob100_mejor5      1         1    True  OK
+cercanos/N8/clase0       cruce_un_punto_pob100_mejor1      1         1    True  OK
+cercanos/N8/clase0       cruce_un_punto_pob100_mejor2      1         1    True  OK
+cercanos/N8/clase0       cruce_un_punto_pob100_mejor3      1         1    True  OK
+cercanos/N8/clase0       cruce_un_punto_pob100_mejor4      1         1    True  OK
+cercanos/N8/clase0       cruce_un_punto_pob100_mejor5      1         1    True  OK
+lejanos/N11/clase0                          inicial_1      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                          inicial_2      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                          inicial_3      1         1    True  OK
+lejanos/N11/clase0                          inicial_4      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                          inicial_5      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                          inicial_6      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                          inicial_7      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                          inicial_8      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                          inicial_9      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                         inicial_10      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0                         inicial_11      1         1   False  INVALIDO: inconexo
+lejanos/N11/clase0        cruce_uniforme_pob25_mejor1      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob25_mejor2      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob25_mejor3      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob25_mejor4      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob25_mejor5      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob25_mejor1      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob25_mejor2      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob25_mejor3      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob25_mejor4      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob25_mejor5      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob50_mejor1      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob50_mejor2      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob50_mejor3      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob50_mejor4      1         1    True  OK
+lejanos/N11/clase0        cruce_uniforme_pob50_mejor5      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob50_mejor1      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob50_mejor2      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob50_mejor3      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob50_mejor4      1         1    True  OK
+lejanos/N11/clase0        cruce_un_punto_pob50_mejor5      1         1    True  OK
+lejanos/N11/clase0       cruce_uniforme_pob100_mejor1      1         1    True  OK
+lejanos/N11/clase0       cruce_uniforme_pob100_mejor2      1         1    True  OK
+lejanos/N11/clase0       cruce_uniforme_pob100_mejor3      1         1    True  OK
+lejanos/N11/clase0       cruce_uniforme_pob100_mejor4      1         1    True  OK
+lejanos/N11/clase0       cruce_uniforme_pob100_mejor5      1         1    True  OK
+lejanos/N11/clase0       cruce_un_punto_pob100_mejor1      1         1    True  OK
+lejanos/N11/clase0       cruce_un_punto_pob100_mejor2      1         1    True  OK
+lejanos/N11/clase0       cruce_un_punto_pob100_mejor3      1         1    True  OK
+lejanos/N11/clase0       cruce_un_punto_pob100_mejor4      1         1    True  OK
+lejanos/N11/clase0       cruce_un_punto_pob100_mejor5      1         1    True  OK
+lejanos/N2/clase0                           inicial_1      1         1   False  INVALIDO: inconexo
+lejanos/N2/clase0                           inicial_2      1         1   False  INVALIDO: inconexo
+lejanos/N2/clase0         cruce_uniforme_pob25_mejor1      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob25_mejor2      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob25_mejor3      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob25_mejor4      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob25_mejor5      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob25_mejor1      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob25_mejor2      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob25_mejor3      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob25_mejor4      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob25_mejor5      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob50_mejor1      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob50_mejor2      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob50_mejor3      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob50_mejor4      1         1    True  OK
+lejanos/N2/clase0         cruce_uniforme_pob50_mejor5      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob50_mejor1      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob50_mejor2      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob50_mejor3      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob50_mejor4      1         1    True  OK
+lejanos/N2/clase0         cruce_un_punto_pob50_mejor5      1         1    True  OK
+lejanos/N2/clase0        cruce_uniforme_pob100_mejor1      1         1    True  OK
+lejanos/N2/clase0        cruce_uniforme_pob100_mejor2      1         1    True  OK
+lejanos/N2/clase0        cruce_uniforme_pob100_mejor3      1         1    True  OK
+lejanos/N2/clase0        cruce_uniforme_pob100_mejor4      1         1    True  OK
+lejanos/N2/clase0        cruce_uniforme_pob100_mejor5      1         1    True  OK
+lejanos/N2/clase0        cruce_un_punto_pob100_mejor1      1         1    True  OK
+lejanos/N2/clase0        cruce_un_punto_pob100_mejor2      1         1    True  OK
+lejanos/N2/clase0        cruce_un_punto_pob100_mejor3      1         1    True  OK
+lejanos/N2/clase0        cruce_un_punto_pob100_mejor4      1         1    True  OK
+lejanos/N2/clase0        cruce_un_punto_pob100_mejor5      1         1    True  OK
+lejanos/N5/clase0                           inicial_1      1         1   False  INVALIDO: inconexo
+lejanos/N5/clase0                           inicial_2      1         1   False  INVALIDO: inconexo
+lejanos/N5/clase0                           inicial_3      1         1   False  INVALIDO: inconexo
+lejanos/N5/clase0                           inicial_4      1         1   False  INVALIDO: inconexo
+lejanos/N5/clase0                           inicial_5      1         1   False  INVALIDO: inconexo
+lejanos/N5/clase0         cruce_uniforme_pob25_mejor1      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob25_mejor2      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob25_mejor3      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob25_mejor4      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob25_mejor5      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob25_mejor1      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob25_mejor2      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob25_mejor3      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob25_mejor4      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob25_mejor5      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob50_mejor1      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob50_mejor2      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob50_mejor3      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob50_mejor4      1         1    True  OK
+lejanos/N5/clase0         cruce_uniforme_pob50_mejor5      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob50_mejor1      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob50_mejor2      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob50_mejor3      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob50_mejor4      1         1    True  OK
+lejanos/N5/clase0         cruce_un_punto_pob50_mejor5      1         1    True  OK
+lejanos/N5/clase0        cruce_uniforme_pob100_mejor1      1         1    True  OK
+lejanos/N5/clase0        cruce_uniforme_pob100_mejor2      1         1    True  OK
+lejanos/N5/clase0        cruce_uniforme_pob100_mejor3      1         1    True  OK
+lejanos/N5/clase0        cruce_uniforme_pob100_mejor4      1         1    True  OK
+lejanos/N5/clase0        cruce_uniforme_pob100_mejor5      1         1    True  OK
+lejanos/N5/clase0        cruce_un_punto_pob100_mejor1      1         1    True  OK
+lejanos/N5/clase0        cruce_un_punto_pob100_mejor2      1         1    True  OK
+lejanos/N5/clase0        cruce_un_punto_pob100_mejor3      1         1    True  OK
+lejanos/N5/clase0        cruce_un_punto_pob100_mejor4      1         1    True  OK
+lejanos/N5/clase0        cruce_un_punto_pob100_mejor5      1         1    True  OK
+lejanos/N8/clase0                           inicial_1      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0                           inicial_2      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0                           inicial_3      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0                           inicial_4      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0                           inicial_5      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0                           inicial_6      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0                           inicial_7      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0                           inicial_8      1         1   False  INVALIDO: inconexo
+lejanos/N8/clase0         cruce_uniforme_pob25_mejor1      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob25_mejor2      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob25_mejor3      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob25_mejor4      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob25_mejor5      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob25_mejor1      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob25_mejor2      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob25_mejor3      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob25_mejor4      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob25_mejor5      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob50_mejor1      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob50_mejor2      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob50_mejor3      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob50_mejor4      1         1    True  OK
+lejanos/N8/clase0         cruce_uniforme_pob50_mejor5      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob50_mejor1      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob50_mejor2      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob50_mejor3      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob50_mejor4      1         1    True  OK
+lejanos/N8/clase0         cruce_un_punto_pob50_mejor5      1         1    True  OK
+lejanos/N8/clase0        cruce_uniforme_pob100_mejor1      1         1    True  OK
+lejanos/N8/clase0        cruce_uniforme_pob100_mejor2      1         1    True  OK
+lejanos/N8/clase0        cruce_uniforme_pob100_mejor3      1         1    True  OK
+lejanos/N8/clase0        cruce_uniforme_pob100_mejor4      1         1    True  OK
+lejanos/N8/clase0        cruce_uniforme_pob100_mejor5      1         1    True  OK
+lejanos/N8/clase0        cruce_un_punto_pob100_mejor1      1         1    True  OK
+lejanos/N8/clase0        cruce_un_punto_pob100_mejor2      1         1    True  OK
+lejanos/N8/clase0        cruce_un_punto_pob100_mejor3      1         1    True  OK
+lejanos/N8/clase0        cruce_un_punto_pob100_mejor4      1         1    True  OK
+lejanos/N8/clase0        cruce_un_punto_pob100_mejor5      1         1    True  OK
+
+43 de 438 soluciones invalidas (78 iniciales + 360 finales comprobadas)
+  iniciales invalidas: 39 de 78
+  finales invalidas:   4 de 360
+de ellas, 0 de 360 soluciones FINALES tienen la misma clase que los grafos de entrada: no son contrafactuales

@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-08-27T05:01:16",
+  "fuente": "lejanos",
+  "tam_grupo": 5,
+  "clase": 0,
+  "matriz_distancias_poblacion_inicial": [
+    [
+      16,
+      2976,
+      3018,
+      2832,
+      3022
+    ],
+    [
+      3016,
+      84,
+      2932,
+      2818,
+      3078
+    ],
+    [
+      3035,
+      2909,
+      35,
+      2735,
+      3087
+    ],
+    [
+      2833,
+      2783,
+      2723,
+      19,
+      3099
+    ],
+    [
+      3045,
+      3057,
+      3097,
+      3117,
+      45
+    ]
+  ],
+  "distancia_media_poblacion_inicial": [
+    2372.8,
+    2385.6,
+    2360.2,
+    2291.4,
+    2472.2
+  ],
+  "mejor_inicial": {
+    "indice": 3,
+    "distancia_media": 2291.4,
+    "distancias": [
+      2833,
+      2783,
+      2723,
+      19,
+      3099
+    ]
+  },
+  "resultados": [
+    {
+      "Numero_grafos": 5,
+      "Poblacion_maxima": 25,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 2152.0,
+      "Tiempo_de_ejecucion": 470.93769359588623,
+      "Distancias_solucion_final": [
+        2588,
+        2376,
+        1998,
+        1116,
+        2682
+      ],
+      "Dispersion_solucion_final": 0.2643544845218689,
+      "Prefijo": "lejanos_N5_clase0_20260827_041001_cruce_uniforme_pob25"
+    },
+    {
+      "Numero_grafos": 5,
+      "Poblacion_maxima": 25,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 2200.4,
+      "Tiempo_de_ejecucion": 549.7078700065613,
+      "Distancias_solucion_final": [
+        2502,
+        2234,
+        1656,
+        1762,
+        2848
+      ],
+      "Dispersion_solucion_final": 0.20324634394169105,
+      "Prefijo": "lejanos_N5_clase0_20260827_041001_cruce_un_punto_pob25"
+    },
+    {
+      "Numero_grafos": 5,
+      "Poblacion_maxima": 50,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 2049.0,
+      "Tiempo_de_ejecucion": 589.3521730899811,
+      "Distancias_solucion_final": [
+        2141,
+        2285,
+        2199,
+        985,
+        2635
+      ],
+      "Dispersion_solucion_final": 0.27279391838744216,
+      "Prefijo": "lejanos_N5_clase0_20260827_041001_cruce_uniforme_pob50"
+    },
+    {
+      "Numero_grafos": 5,
+      "Poblacion_maxima": 50,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 2238.8,
+      "Tiempo_de_ejecucion": 466.7111020088196,
+      "Distancias_solucion_final": [
+        2736,
+        2674,
+        1378,
+        1442,
+        2964
+      ],
+      "Dispersion_solucion_final": 0.3054626117520718,
+      "Prefijo": "lejanos_N5_clase0_20260827_041001_cruce_un_punto_pob50"
+    },
+    {
+      "Numero_grafos": 5,
+      "Poblacion_maxima": 100,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 1951.2,
+      "Tiempo_de_ejecucion": 444.078741312027,
+      "Distancias_solucion_final": [
+        2048,
+        1936,
+        2138,
+        1178,
+        2456
+      ],
+      "Dispersion_solucion_final": 0.217093783281562,
+      "Prefijo": "lejanos_N5_clase0_20260827_041001_cruce_uniforme_pob100"
+    },
+    {
+      "Numero_grafos": 5,
+      "Poblacion_maxima": 100,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 2125.2,
+      "Tiempo_de_ejecucion": 536.8987762928009,
+      "Distancias_solucion_final": [
+        2254,
+        2266,
+        2154,
+        1212,
+        2740
+      ],
+      "Dispersion_solucion_final": 0.23519260848435647,
+      "Prefijo": "lejanos_N5_clase0_20260827_041001_cruce_un_punto_pob100"
+    }
+  ]
+}

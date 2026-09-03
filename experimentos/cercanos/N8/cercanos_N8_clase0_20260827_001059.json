@@ -1,0 +1,234 @@
+{
+  "timestamp": "2026-08-27T01:02:56",
+  "fuente": "cercanos",
+  "tam_grupo": 8,
+  "clase": 0,
+  "matriz_distancias_poblacion_inicial": [
+    [
+      16,
+      1920,
+      1990,
+      1910,
+      2082,
+      2008,
+      1876,
+      2114
+    ],
+    [
+      1935,
+      41,
+      2057,
+      1985,
+      2029,
+      2069,
+      1969,
+      2077
+    ],
+    [
+      2033,
+      2083,
+      69,
+      1871,
+      2113,
+      2037,
+      1993,
+      2019
+    ],
+    [
+      1927,
+      1981,
+      1845,
+      39,
+      2003,
+      2007,
+      1849,
+      2069
+    ],
+    [
+      2149,
+      2073,
+      2135,
+      2061,
+      115,
+      2203,
+      1949,
+      2125
+    ],
+    [
+      2011,
+      2055,
+      1993,
+      1995,
+      2143,
+      25,
+      1999,
+      2049
+    ],
+    [
+      1898,
+      1974,
+      1970,
+      1860,
+      1902,
+      2024,
+      52,
+      1894
+    ],
+    [
+      2141,
+      2083,
+      1999,
+      2079,
+      2069,
+      2065,
+      1893,
+      43
+    ]
+  ],
+  "distancia_media_poblacion_inicial": [
+    1739.5,
+    1770.25,
+    1777.25,
+    1715.0,
+    1851.25,
+    1783.75,
+    1696.75,
+    1796.5
+  ],
+  "mejor_inicial": {
+    "indice": 6,
+    "distancia_media": 1696.75,
+    "distancias": [
+      1898,
+      1974,
+      1970,
+      1860,
+      1902,
+      2024,
+      52,
+      1894
+    ]
+  },
+  "resultados": [
+    {
+      "Numero_grafos": 8,
+      "Poblacion_maxima": 25,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 1497.0,
+      "Tiempo_de_ejecucion": 511.0583505630493,
+      "Distancias_solucion_final": [
+        1493,
+        1501,
+        1643,
+        1481,
+        1657,
+        1707,
+        811,
+        1683
+      ],
+      "Dispersion_solucion_final": 0.18240509877859265,
+      "Prefijo": "cercanos_N8_clase0_20260827_001059_cruce_uniforme_pob25"
+    },
+    {
+      "Numero_grafos": 8,
+      "Poblacion_maxima": 25,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 1589.0,
+      "Tiempo_de_ejecucion": 560.7615489959717,
+      "Distancias_solucion_final": [
+        1687,
+        1789,
+        1713,
+        1191,
+        1789,
+        1859,
+        855,
+        1829
+      ],
+      "Dispersion_solucion_final": 0.21487610758510506,
+      "Prefijo": "cercanos_N8_clase0_20260827_001059_cruce_un_punto_pob25"
+    },
+    {
+      "Numero_grafos": 8,
+      "Poblacion_maxima": 50,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 1421.5,
+      "Tiempo_de_ejecucion": 490.082270860672,
+      "Distancias_solucion_final": [
+        1229,
+        1485,
+        1513,
+        1295,
+        1483,
+        1603,
+        1153,
+        1611
+      ],
+      "Dispersion_solucion_final": 0.11402869854414255,
+      "Prefijo": "cercanos_N8_clase0_20260827_001059_cruce_uniforme_pob50"
+    },
+    {
+      "Numero_grafos": 8,
+      "Poblacion_maxima": 50,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 1605.0,
+      "Tiempo_de_ejecucion": 525.2282598018646,
+      "Distancias_solucion_final": [
+        1772,
+        1746,
+        1618,
+        1702,
+        1804,
+        1856,
+        534,
+        1808
+      ],
+      "Dispersion_solucion_final": 0.2557744333346544,
+      "Prefijo": "cercanos_N8_clase0_20260827_001059_cruce_un_punto_pob50"
+    },
+    {
+      "Numero_grafos": 8,
+      "Poblacion_maxima": 100,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 1364.0,
+      "Tiempo_de_ejecucion": 513.9159619808197,
+      "Distancias_solucion_final": [
+        1341,
+        1387,
+        1419,
+        1131,
+        1457,
+        1495,
+        1163,
+        1519
+      ],
+      "Dispersion_solucion_final": 0.09992214098182299,
+      "Prefijo": "cercanos_N8_clase0_20260827_001059_cruce_uniforme_pob100"
+    },
+    {
+      "Numero_grafos": 8,
+      "Poblacion_maxima": 100,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 1552.25,
+      "Tiempo_de_ejecucion": 482.94629096984863,
+      "Distancias_solucion_final": [
+        1702,
+        1728,
+        1536,
+        1282,
+        1758,
+        1792,
+        846,
+        1774
+      ],
+      "Dispersion_solucion_final": 0.2004345129195324,
+      "Prefijo": "cercanos_N8_clase0_20260827_001059_cruce_un_punto_pob100"
+    }
+  ]
+}

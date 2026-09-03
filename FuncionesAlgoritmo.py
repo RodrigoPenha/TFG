@@ -53,6 +53,53 @@ def clasificar (G, clf):
     return Importargrafos.oracle(nx.adjacency_matrix(G).toarray(), clf)
 
 
+def clave_grafo(G):
+    """
+    Devuelve una clave hashable que identifica al grafo por su matriz de adyacencia.
+
+    Reutiliza graphToRepr (triángulo superior de la matriz, suficiente por ser el
+    grafo no dirigido) y lo empaqueta en un objeto bytes: dos grafos con la misma
+    matriz de adyacencia producen la misma clave.
+    """
+    return bytes(int(v) for v in graphToRepr(G))
+
+
+def mutar(G, permutaciones_aristas_grafos_original):
+    """
+    Muta un grafo AÑADIENDO una arista presente en al menos dos de los grafos
+    originales. Las candidatas salen de permutaciones_aristas_grafos_original,
+    que solo contiene intersecciones de subconjuntos de tamaño 2 o mayor, por lo
+    que una arista presente en un único original nunca puede añadirse. La
+    probabilidad de cada arista crece con el número de originales que la
+    contienen (reutilizando elegir_arista_ponderada).
+
+    Como solo añade aristas, la conexidad del grafo se preserva siempre. Se
+    excluyen las aristas que el grafo ya tiene para garantizar que el resultado
+    sea realmente distinto.
+    """
+    G_mutado = G.copy()
+    aristas_actuales = set(G_mutado.edges())
+
+    # Aristas candidatas por grupo, excluyendo las que G ya tiene. Una arista
+    # compartida por más originales aparece en más grupos/combinaciones, por lo
+    # que acumula más peso de forma natural.
+    grupos = [
+        [a for interseccion in grupo for a in interseccion
+         if a not in aristas_actuales and (a[1], a[0]) not in aristas_actuales]
+        for grupo in permutaciones_aristas_grafos_original
+    ]
+    if not any(grupos):          # no queda ninguna arista nueva que añadir
+        return G_mutado
+
+    # Score decreciente: los grupos con más originales (índices bajos) pesan más.
+    n = len(grupos)
+    scores = [n - i for i in range(n)]
+
+    arista = elegir_arista_ponderada(grupos, scores)
+    G_mutado.add_edge(*arista)
+    return G_mutado
+
+
 
 def cruce_un_punto(padre1, padre2):
     if len(padre1) != len(padre2):

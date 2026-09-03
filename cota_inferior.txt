@@ -1,0 +1,18 @@
+grupo                              m  cota inferior
+---------------------------------------------------
+grafos_cercanos/N11/clase0        11         1258.5
+grafos_cercanos/N11/clase1        11         1396.6
+grafos_cercanos/N2/clase0          2          908.0
+grafos_cercanos/N2/clase1          2         1004.0
+grafos_cercanos/N5/clase0          5         1099.0
+grafos_cercanos/N5/clase1          5         1233.6
+grafos_cercanos/N8/clase0          8         1212.5
+grafos_cercanos/N8/clase1          8         1351.2
+grafos_lejanos/N11/clase0         11         1690.6
+grafos_lejanos/N11/clase1         11         1645.4
+grafos_lejanos/N2/clase0           2         1541.0
+grafos_lejanos/N2/clase1           2         1452.0
+grafos_lejanos/N5/clase0           5         1627.4
+grafos_lejanos/N5/clase1           5         1576.8
+grafos_lejanos/N8/clase0           8         1683.5
+grafos_lejanos/N8/clase1           8         1647.0

@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-08-26T23:22:13",
+  "fuente": "cercanos",
+  "tam_grupo": 2,
+  "clase": 0,
+  "matriz_distancias_poblacion_inicial": [
+    [
+      71,
+      1873
+    ],
+    [
+      1844,
+      38
+    ]
+  ],
+  "distancia_media_poblacion_inicial": [
+    972.0,
+    941.0
+  ],
+  "mejor_inicial": {
+    "indice": 1,
+    "distancia_media": 941.0,
+    "distancias": [
+      1844,
+      38
+    ]
+  },
+  "resultados": [
+    {
+      "Numero_grafos": 2,
+      "Poblacion_maxima": 25,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 926.0,
+      "Tiempo_de_ejecucion": 368.29496145248413,
+      "Distancias_solucion_final": [
+        1296,
+        556
+      ],
+      "Dispersion_solucion_final": 0.39956803455723544,
+      "Prefijo": "cercanos_N2_clase0_20260826_220903_cruce_uniforme_pob25"
+    },
+    {
+      "Numero_grafos": 2,
+      "Poblacion_maxima": 25,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 938.0,
+      "Tiempo_de_ejecucion": 1001.5209317207336,
+      "Distancias_solucion_final": [
+        1737,
+        139
+      ],
+      "Dispersion_solucion_final": 0.8518123667377399,
+      "Prefijo": "cercanos_N2_clase0_20260826_220903_cruce_un_punto_pob25"
+    },
+    {
+      "Numero_grafos": 2,
+      "Poblacion_maxima": 50,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 924.0,
+      "Tiempo_de_ejecucion": 399.8574860095978,
+      "Distancias_solucion_final": [
+        1288,
+        560
+      ],
+      "Dispersion_solucion_final": 0.3939393939393939,
+      "Prefijo": "cercanos_N2_clase0_20260826_220903_cruce_uniforme_pob50"
+    },
+    {
+      "Numero_grafos": 2,
+      "Poblacion_maxima": 50,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 938.0,
+      "Tiempo_de_ejecucion": 1094.3349463939667,
+      "Distancias_solucion_final": [
+        1746,
+        130
+      ],
+      "Dispersion_solucion_final": 0.8614072494669509,
+      "Prefijo": "cercanos_N2_clase0_20260826_220903_cruce_un_punto_pob50"
+    },
+    {
+      "Numero_grafos": 2,
+      "Poblacion_maxima": 100,
+      "Cruce": "cruce_uniforme",
+      "Numero_iteraciones": 5000,
+      "Score": 917.0,
+      "Tiempo_de_ejecucion": 456.0708248615265,
+      "Distancias_solucion_final": [
+        1187,
+        647
+      ],
+      "Dispersion_solucion_final": 0.29443838604143946,
+      "Prefijo": "cercanos_N2_clase0_20260826_220903_cruce_uniforme_pob100"
+    },
+    {
+      "Numero_grafos": 2,
+      "Poblacion_maxima": 100,
+      "Cruce": "cruce_un_punto",
+      "Numero_iteraciones": 5000,
+      "Score": 939.0,
+      "Tiempo_de_ejecucion": 1060.9803762435913,
+      "Distancias_solucion_final": [
+        1762,
+        116
+      ],
+      "Dispersion_solucion_final": 0.8764643237486688,
+      "Prefijo": "cercanos_N2_clase0_20260826_220903_cruce_un_punto_pob100"
+    }
+  ]
+}

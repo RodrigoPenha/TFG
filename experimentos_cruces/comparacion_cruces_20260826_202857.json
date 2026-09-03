@@ -1,0 +1,213 @@
+{
+  "timestamp": "2026-08-26T20:29:15",
+  "configuracion": {
+    "tam_grupo": 11,
+    "clase": 0,
+    "poblacion": 100,
+    "iteraciones": 2000,
+    "semilla": 12345,
+    "cruces": [
+      "cruce_un_punto",
+      "cruce_dos_puntos",
+      "cruce_uniforme"
+    ],
+    "fuentes": [
+      "cercanos",
+      "lejanos"
+    ]
+  },
+  "grupos": {
+    "cercanos": {
+      "cota_inferior": 1258.4545454545455,
+      "fitness_inicial": {
+        "mejor": 1785.2727272727273,
+        "peor": 1932.4545454545455,
+        "todos": [
+          1868.0,
+          1932.4545454545455,
+          1785.2727272727273,
+          1908.7272727272727,
+          1893.5454545454545,
+          1862.5454545454545,
+          1801.8181818181818,
+          1868.6363636363637,
+          1854.2727272727273,
+          1830.2727272727273,
+          1901.4545454545455
+        ]
+      },
+      "mejor_inicial": {
+        "indice": 2,
+        "fitness": 1785.2727272727273
+      },
+      "cruces": {
+        "cruce_un_punto": {
+          "hijos_evaluados": 4000,
+          "hijos_conexos": 3976,
+          "hijos_inconexos": 24,
+          "pct_inconexos": 0.6,
+          "distribucion_componentes": {
+            "1": 3976,
+            "2": 21,
+            "3": 3
+          },
+          "reparados": 15,
+          "fallo_reparacion_2comp": 6,
+          "descartados_3mas_comp": 3,
+          "mutaciones": 2177,
+          "clasificaciones": 36184,
+          "inserciones": 3898,
+          "score": 1648.909090909091,
+          "segundos": 505.8,
+          "gap_vs_cota_pct": 31.03,
+          "mejora_sobre_inicial": 136.4
+        },
+        "cruce_dos_puntos": {
+          "hijos_evaluados": 4000,
+          "hijos_conexos": 3983,
+          "hijos_inconexos": 17,
+          "pct_inconexos": 0.43,
+          "distribucion_componentes": {
+            "1": 3983,
+            "2": 17
+          },
+          "reparados": 14,
+          "fallo_reparacion_2comp": 3,
+          "descartados_3mas_comp": 0,
+          "mutaciones": 2477,
+          "clasificaciones": 21489,
+          "inserciones": 3827,
+          "score": 1623.909090909091,
+          "segundos": 436.7,
+          "gap_vs_cota_pct": 29.04,
+          "mejora_sobre_inicial": 161.4
+        },
+        "cruce_uniforme": {
+          "hijos_evaluados": 4000,
+          "hijos_conexos": 3999,
+          "hijos_inconexos": 1,
+          "pct_inconexos": 0.03,
+          "distribucion_componentes": {
+            "1": 3999,
+            "2": 1
+          },
+          "reparados": 1,
+          "fallo_reparacion_2comp": 0,
+          "descartados_3mas_comp": 0,
+          "mutaciones": 3939,
+          "clasificaciones": 7941,
+          "inserciones": 3623,
+          "score": 1526.909090909091,
+          "segundos": 482.1,
+          "gap_vs_cota_pct": 21.33,
+          "mejora_sobre_inicial": 258.4
+        }
+      }
+    },
+    "lejanos": {
+      "cota_inferior": 1690.6363636363637,
+      "fitness_inicial": {
+        "mejor": 2565.7272727272725,
+        "peor": 2699.0,
+        "todos": [
+          2688.6363636363635,
+          2662.4545454545455,
+          2633.181818181818,
+          2659.4545454545455,
+          2699.0,
+          2630.909090909091,
+          2652.6363636363635,
+          2673.3636363636365,
+          2565.7272727272725,
+          2676.7272727272725,
+          2694.4545454545455
+        ]
+      },
+      "mejor_inicial": {
+        "indice": 8,
+        "fitness": 2565.7272727272725
+      },
+      "cruces": {
+        "cruce_un_punto": {
+          "hijos_evaluados": 4000,
+          "hijos_conexos": 3933,
+          "hijos_inconexos": 67,
+          "pct_inconexos": 1.68,
+          "distribucion_componentes": {
+            "1": 3933,
+            "2": 24,
+            "3": 19,
+            "4": 14,
+            "5": 3,
+            "7": 1,
+            "9": 1,
+            "10": 2,
+            "19": 1,
+            "20": 1,
+            "28": 1
+          },
+          "reparados": 21,
+          "fallo_reparacion_2comp": 3,
+          "descartados_3mas_comp": 43,
+          "mutaciones": 1844,
+          "clasificaciones": 20820,
+          "inserciones": 3899,
+          "score": 2416.7272727272725,
+          "segundos": 285.3,
+          "gap_vs_cota_pct": 42.95,
+          "mejora_sobre_inicial": 149.0
+        },
+        "cruce_dos_puntos": {
+          "hijos_evaluados": 4000,
+          "hijos_conexos": 3741,
+          "hijos_inconexos": 259,
+          "pct_inconexos": 6.48,
+          "distribucion_componentes": {
+            "1": 3741,
+            "2": 217,
+            "3": 28,
+            "4": 5,
+            "5": 2,
+            "6": 3,
+            "8": 1,
+            "10": 2,
+            "12": 1
+          },
+          "reparados": 199,
+          "fallo_reparacion_2comp": 18,
+          "descartados_3mas_comp": 42,
+          "mutaciones": 2958,
+          "clasificaciones": 118593,
+          "inserciones": 3722,
+          "score": 2265.7272727272725,
+          "segundos": 738.9,
+          "gap_vs_cota_pct": 34.02,
+          "mejora_sobre_inicial": 300.0
+        },
+        "cruce_uniforme": {
+          "hijos_evaluados": 4000,
+          "hijos_conexos": 3805,
+          "hijos_inconexos": 195,
+          "pct_inconexos": 4.88,
+          "distribucion_componentes": {
+            "1": 3805,
+            "2": 183,
+            "3": 7,
+            "4": 4,
+            "6": 1
+          },
+          "reparados": 171,
+          "fallo_reparacion_2comp": 12,
+          "descartados_3mas_comp": 12,
+          "mutaciones": 1684,
+          "clasificaciones": 65832,
+          "inserciones": 3814,
+          "score": 2199.2727272727275,
+          "segundos": 501.7,
+          "gap_vs_cota_pct": 30.09,
+          "mejora_sobre_inicial": 366.5
+        }
+      }
+    }
+  }
+}
